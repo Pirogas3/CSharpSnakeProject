@@ -2,9 +2,6 @@
 using CSharpSnakeProject.Logic;
 using CSharpSnakeProject.Logic.GameState;
 using CSharpSnakeProject.Renderer;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-
 
 internal class Program
 {

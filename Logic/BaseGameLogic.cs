@@ -1,9 +1,6 @@
 ﻿using CSharpSnakeProject.Input;
 using CSharpSnakeProject.Logic.GameState;
 using CSharpSnakeProject.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic
 {
@@ -19,6 +16,7 @@ namespace CSharpSnakeProject.Logic
         public abstract void OnArrowLeft();
         public abstract void OnArrowRight();
         public abstract void OnPause();
+        public abstract void OnShot();
         public abstract void OnExit();
 
         public abstract void Update(float deltaTime);

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace CSharpSnakeProject.Input
 {
     public class ConsoleInput
@@ -33,6 +30,9 @@ namespace CSharpSnakeProject.Input
                         break;
                     case ConsoleKey.Spacebar:
                         foreach (var l in listeners) l.OnPause();
+                        break;
+                    case ConsoleKey.Z or ConsoleKey.C:
+                        foreach (var l in listeners) l.OnShot();
                         break;
                     case ConsoleKey.Escape:
                         foreach (var l in listeners) l.OnExit();

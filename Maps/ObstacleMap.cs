@@ -1,7 +1,4 @@
 ﻿using CSharpSnakeProject.Structs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Maps
 {
@@ -43,8 +40,6 @@ namespace CSharpSnakeProject.Maps
             }
 
             // 2. Определяем область, где не должны появляться стены (стартовая зона змейки)
-            //    Змейка стартует в центре: голова (Width/2, Height/2), хвост (Width/2+1, Height/2)
-            //    Защитим квадрат 5x5 вокруг центра, чтобы змейка могла появиться и сразу не врезаться
             int startX = Width / 2;
             int startY = Height / 2;
             var noSpawnZone = new HashSet<Cell>();
@@ -98,8 +93,6 @@ namespace CSharpSnakeProject.Maps
 
                 var cells = form(baseCell);
 
-                // Проверяем, что все клетки внутри карты, не пересекаются с границами,
-                // не попадают в запретную зону старта и не пересекаются с уже существующими стенами
                 bool isValid = true;
                 foreach (var cell in cells)
                 {

@@ -1,7 +1,4 @@
 ﻿using CSharpSnakeProject.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic.GameState
 {
@@ -12,6 +9,8 @@ namespace CSharpSnakeProject.Logic.GameState
             "Управление:",
             "Стрелки / WASD - движение змейки",
             "Пробел - пауза во время игры",
+            "Shift - ускорение змейки",
+            "Z / C - плевок ядом (растворяет мины)", 
             "Esc - выход в главное меню",
             "",
             "Нажмите любую клавишу для возврата в меню"

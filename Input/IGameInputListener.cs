@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace CSharpSnakeProject.Input
 {
     public interface IGameInputListener
@@ -11,6 +8,7 @@ namespace CSharpSnakeProject.Input
         void OnArrowLeft();
         void OnArrowRight();
         void OnPause();
+        void OnShot();
         void OnExit();
     }
 }

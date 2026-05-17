@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace CSharpSnakeProject.Renderer
 {
     public class ConsoleRenderer
@@ -103,56 +100,6 @@ namespace CSharpSnakeProject.Renderer
                     _pixelColors[w, h] = 0;
                     _pixels[w, h] = (char)0;
                 }
-        }
-
-        //public override bool Equals(object? obj)
-        //{
-        //    if (obj is not ConsoleRenderer casted)
-        //        return false;
-
-        //    if (_maxWidth != casted._maxWidth || _maxHeight != casted._maxHeight ||
-        //        width != casted.width || height != casted.height ||
-        //        _colors.Length != casted._colors.Length)
-        //    {
-        //        return false;
-        //    }
-
-
-        //    for (int i = 0; i < _colors.Length; i++)
-        //    {
-        //        if (_colors[i] != casted._colors[i])
-        //            return false;
-        //    }
-
-        //    for (int w = 0; w < width; w++)
-        //        for (var h = 0; h < height; h++)
-        //        {
-        //            if (_pixels[w, h] != casted._pixels[w, h] ||
-        //                            _pixelColors[w, h] != casted._pixelColors[w, h])
-        //            {
-        //                return false;
-        //            }
-        //        }
-
-        //    return true;
-        //}
-
-        public override int GetHashCode()
-        {
-            var hash = HashCode.Combine(_maxWidth, _maxHeight, width, height);
-
-            for (int i = 0; i < _colors.Length; i++)
-            {
-                hash = HashCode.Combine(hash, _colors[i]);
-            }
-
-            for (int w = 0; w < width; w++)
-                for (var h = 0; h < height; h++)
-                {
-                    hash = HashCode.Combine(hash, _pixelColors[w, h], _pixels[w, h]);
-                }
-
-            return hash;
         }
     }
 }

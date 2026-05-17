@@ -1,12 +1,8 @@
 ﻿using CSharpSnakeProject.Enums;
-using CSharpSnakeProject.Input;
 using CSharpSnakeProject.Logic.Food;
 using CSharpSnakeProject.Logic.GameState;
 using CSharpSnakeProject.Maps;
 using CSharpSnakeProject.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic
 {
@@ -17,11 +13,10 @@ namespace CSharpSnakeProject.Logic
             ChangeState(new MenuState(this));
         }
 
-        public void StartGame(IMap map, List<IFood> availableFoods, GamePalette palette, IFoodGenerator foodGenerator, float speedSnake)
+        public void StartGame(IMap map, List<IFood> availableFoods, GamePalette palette, IFoodGenerator foodGenerator, float speedSnake, bool hasEnemies)
         {
-            var gameplayState = new SnakeGameplayState(map, availableFoods, palette, foodGenerator, speedSnake, this);
+            var gameplayState = new SnakeGameplayState(map, availableFoods, palette, foodGenerator, speedSnake, this, hasEnemies);
             ChangeState(gameplayState);
-            gameplayState.Reset();
         }
 
         public override void OnArrowUp()
@@ -52,6 +47,12 @@ namespace CSharpSnakeProject.Logic
         {
             if (currentState is SnakeGameplayState gameplay)
                 gameplay.TogglePause();
+        }
+
+        public override void OnShot()
+        {
+            if (currentState is SnakeGameplayState gameplay)
+                gameplay.Shot();
         }
 
         public override void OnExit()

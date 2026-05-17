@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace CSharpSnakeProject.Logic.Food
 {
     public class Carrot : FoodBase

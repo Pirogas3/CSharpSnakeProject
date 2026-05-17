@@ -1,9 +1,6 @@
 ﻿using CSharpSnakeProject.Logic.Food;
 using CSharpSnakeProject.Maps;
 using CSharpSnakeProject.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic.GameState
 {
@@ -28,16 +25,16 @@ namespace CSharpSnakeProject.Logic.GameState
                 var key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.UpArrow or ConsoleKey.W:
                         selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
                         break;
-                    case ConsoleKey.DownArrow:
+                    case ConsoleKey.DownArrow or ConsoleKey.S:
                         selectedIndex = (selectedIndex + 1) % options.Length;
                         break;
-                    case ConsoleKey.LeftArrow:
+                    case ConsoleKey.LeftArrow or ConsoleKey.A:
                         ChangeOption(-1);
                         break;
-                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.RightArrow or ConsoleKey.D:
                         ChangeOption(1);
                         break;
                     case ConsoleKey.Enter:
@@ -64,9 +61,8 @@ namespace CSharpSnakeProject.Logic.GameState
                     options[1] = $"Сложность: {diffNames[difficulty]} (скорость змейки)";
                     break;
                 case 2: // Враги
-                    // Пока только "Нет"
-                    enemies = 0;
-                    options[2] = "Враги: Нет (в разработке)";
+                    enemies = (enemies + delta) % 2;
+                    options[2] = enemies == 0 ? "Враги: Нет" : "Враги: Да";
                     break;
             }
         }
@@ -75,7 +71,7 @@ namespace CSharpSnakeProject.Logic.GameState
         {
             // Создаём карту
             IMap map;
-            int width = 40, height = 28;
+            int width = 30, height = 20;
             if (mapType == 0)
                 map = new BasicMap(width, height);
             else
@@ -85,9 +81,9 @@ namespace CSharpSnakeProject.Logic.GameState
             float snakeSpeed;
             switch (difficulty)
             {
-                case 0: snakeSpeed = 8f; break;
-                case 1: snakeSpeed = 12f; break;
-                default: snakeSpeed = 16f; break;
+                case 0: snakeSpeed = 4f; break;
+                case 1: snakeSpeed = 8f; break;
+                default: snakeSpeed = 12f; break;
             }
 
             // Еда
@@ -95,7 +91,9 @@ namespace CSharpSnakeProject.Logic.GameState
             GamePalette palette = _gameLogic.CreatePalette();
             IFoodGenerator foodGenerator = new FoodGenerator();
 
-            _gameLogic.StartGame(map, availableFoods, palette, foodGenerator, snakeSpeed);
+            bool hasEnemies = enemies == 1;
+
+            _gameLogic.StartGame(map, availableFoods, palette, foodGenerator, snakeSpeed, hasEnemies);
         }
 
         public override void Draw(ConsoleRenderer renderer)

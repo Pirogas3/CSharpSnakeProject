@@ -1,8 +1,5 @@
 ﻿using CSharpSnakeProject.Enums;
 using CSharpSnakeProject.Structs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Entities
 {
@@ -13,10 +10,21 @@ namespace CSharpSnakeProject.Entities
         private char _symbol = '■'; //Символ змейки меняется тут
         public char Symbol { get => _symbol; set => _symbol = value; }
 
-        public Snake(Cell startHead, Cell startTail, SnakeDirection startDirection)
+        private float _basicSpeedSnake = 4f;
+        private float _speedBoost = 2.5f;
+        private float _currentSpeedSnake = 4f;
+        private float _lastSpeedSnake = 0f;
+        public float BasicSpeedSnake { get => _basicSpeedSnake; }
+        public float SpeedBoost { get => _speedBoost; }
+        public float CurrentSpeedSnake { get => _currentSpeedSnake; set => _currentSpeedSnake = value; }
+        public float LastSpeedSnake { get => _lastSpeedSnake; set => _lastSpeedSnake = value; }
+
+        public Snake(Cell startHead, Cell startTail, SnakeDirection startDirection, float speedSnake)
         {
             Body = new List<Cell> { startHead, startTail };
             Direction = startDirection;
+            _basicSpeedSnake = speedSnake;
+            _currentSpeedSnake = _basicSpeedSnake;
         }
 
         // Голова змейки
@@ -36,7 +44,7 @@ namespace CSharpSnakeProject.Entities
                 Body.RemoveAt(Body.Count - 1);
         }
 
-        // Добавление сегмента без удаления хвоста (используется когда съели еду, но можно и отдельный метод Grow)
+        // Добавление сегмента
         public void Grow(Cell newHead)
         {
             Body.Insert(0, newHead);
@@ -79,15 +87,6 @@ namespace CSharpSnakeProject.Entities
         {
             if (Body.Count > 0)
                 Body.RemoveAt(Body.Count - 1);
-        }
-
-        // Сброс змейки в начальное состояние (при перезапуске уровня)
-        public void Reset(Cell startHead, Cell startTail, SnakeDirection startDirection)
-        {
-            Body.Clear();
-            Body.Add(startHead);
-            Body.Add(startTail);
-            Direction = startDirection;
         }
     }
 }

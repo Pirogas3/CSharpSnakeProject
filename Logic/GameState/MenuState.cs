@@ -1,7 +1,4 @@
 ﻿using CSharpSnakeProject.Renderer;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic.GameState
 {
@@ -23,10 +20,10 @@ namespace CSharpSnakeProject.Logic.GameState
                 var key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.UpArrow or ConsoleKey.W:
                         selectedIndex = (selectedIndex - 1 + menuItems.Length) % menuItems.Length;
                         break;
-                    case ConsoleKey.DownArrow:
+                    case ConsoleKey.DownArrow or ConsoleKey.S:
                         selectedIndex = (selectedIndex + 1) % menuItems.Length;
                         break;
                     case ConsoleKey.Enter:
