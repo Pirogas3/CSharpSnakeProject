@@ -11,7 +11,7 @@ namespace CSharpSnakeProject.Logic.Food
         public virtual float LifespanSeconds => 30f; //стандартное время жизни еды
         public abstract ConsoleColor Color { get; }
 
-        public virtual bool IsValidPosition(Cell position, IMap map, List<Cell> snakeBody)
+        public virtual bool IsValidPosition(Cell position, IMap map, IList<Cell> snakeBody)
         {
             return !snakeBody.Contains(position) && !map.GetWalls().Contains(position);
         }

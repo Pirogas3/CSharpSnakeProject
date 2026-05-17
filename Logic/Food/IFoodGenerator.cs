@@ -5,6 +5,6 @@ namespace CSharpSnakeProject.Logic.Food
 {
     public interface IFoodGenerator
     {
-        Cell GenerateFood(IFood food, IMap map, List<Cell> snakeBody);
+        Cell GenerateFood(IFood food, IMap map, IList<Cell> snakeBody);
     }
 }

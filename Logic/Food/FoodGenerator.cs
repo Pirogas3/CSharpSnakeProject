@@ -7,7 +7,7 @@ namespace CSharpSnakeProject.Logic.Food
     {
         private readonly Random _random = new Random();
 
-        public Cell GenerateFood(IFood food, IMap map, List<Cell> snakeBody)
+        public Cell GenerateFood(IFood food, IMap map, IList<Cell> snakeBody)
         {
             const int maxAttempts = 100;
             for (int attempt = 0; attempt < maxAttempts; attempt++)

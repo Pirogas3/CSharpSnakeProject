@@ -10,6 +10,6 @@ namespace CSharpSnakeProject.Logic.Food
         int ScoreValue { get; }
         float LifespanSeconds { get; }
         ConsoleColor Color { get; }
-        bool IsValidPosition(Cell position, IMap map, List<Cell> snakeBody);
+        bool IsValidPosition(Cell position, IMap map, IList<Cell> snakeBody);
     }
 }

@@ -21,7 +21,7 @@ namespace CSharpSnakeProject.Logic.GameState
 
         public override void Reset()
         {
-            _world.Reset();
+            //не понадобилось
         }
 
         public void Shot()
