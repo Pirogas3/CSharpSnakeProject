@@ -29,7 +29,7 @@ namespace CSharpSnakeProject.Maps
                 walls.Add(new Cell(x, Height - 1));
             }
 
-            // Левая и правая границы (без углов, чтобы не дублировать)
+            // Левая и правая границы
             for (int y = 1; y < Height - 1; y++)
             {
                 walls.Add(new Cell(0, y));

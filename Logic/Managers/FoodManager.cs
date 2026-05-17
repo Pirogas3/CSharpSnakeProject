@@ -2,9 +2,6 @@
 using CSharpSnakeProject.Maps;
 using CSharpSnakeProject.Renderer;
 using CSharpSnakeProject.Structs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic.Managers
 {

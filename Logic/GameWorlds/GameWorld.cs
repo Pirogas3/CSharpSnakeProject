@@ -35,18 +35,15 @@ namespace CSharpSnakeProject.Logic.GameWorlds
             _map = map;
             _palette = palette;
             _hasEnemies = hasEnemies;
-
             int middleY = _map.Height / 2;
             int middleX = _map.Width / 2;
             Cell startHead = new(middleX, middleY);
             Cell startTail = new(middleX + 1, middleY);
+
             _snake = new Snake(startHead, startTail, SnakeDirection.Left, speedSnake);
-
             _projectileManager = new ProjectileManager();
-
             _foodManager = new FoodManager(map, availableFoods, foodGenerator);
             _foodManager.GenerateFood(_snake.Body);
-
             if (_hasEnemies)
             {
                 _mineManager = new MineManager(_map, () => _score);

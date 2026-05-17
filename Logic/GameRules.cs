@@ -2,9 +2,6 @@
 using CSharpSnakeProject.Logic.Managers;
 using CSharpSnakeProject.Maps;
 using CSharpSnakeProject.Structs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharpSnakeProject.Logic
 {
@@ -28,7 +25,7 @@ namespace CSharpSnakeProject.Logic
             snake.Move(nextHead, true);
             score += foodManager.CurrentFood.ScoreValue;
             foodManager.GenerateFood(snake.Body);
-            return false; // поедание не заканчивает игру
+            return false;
         }
 
         public void ApplyNormalMove(Snake snake, Cell nextHead)
