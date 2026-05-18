@@ -70,11 +70,12 @@ namespace CSharpSnakeProject.Logic
         {
             return new GamePalette(
                 background: ConsoleColor.Black,
-                food: ConsoleColor.Red,
+                food: ConsoleColor.DarkYellow,
                 walls: ConsoleColor.White,
                 snakeBody: ConsoleColor.Green,
                 snakeHead: ConsoleColor.Blue,
-                score: ConsoleColor.White
+                score: ConsoleColor.White,
+                enemis: ConsoleColor.Red
             );
         }
     }

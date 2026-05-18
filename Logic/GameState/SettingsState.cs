@@ -62,7 +62,7 @@ namespace CSharpSnakeProject.Logic.GameState
                     break;
                 case 2: // Враги
                     enemies = (enemies + delta) % 2;
-                    options[2] = enemies == 0 ? "Враги: Нет" : "Враги: Да";
+                    options[2] = enemies == 0 ? "Враги: Нет" : "Враги: Да (☢  - мины)";
                     break;
             }
         }
@@ -102,7 +102,7 @@ namespace CSharpSnakeProject.Logic.GameState
             int centerX = renderer.width / 2;
             int centerY = renderer.height / 2;
 
-            renderer.DrawString("НАСТРОЙКИ УРОВНЯ", centerX - 10, centerY - 4, ConsoleColor.Yellow);
+            renderer.DrawString("НАСТРОЙКИ УРОВНЯ", centerX - 8, centerY - 3, ConsoleColor.White);
 
             for (int i = 0; i < options.Length; i++)
             {
@@ -112,7 +112,7 @@ namespace CSharpSnakeProject.Logic.GameState
                 renderer.DrawString(line, x, centerY - 1 + i, ConsoleColor.White);
             }
 
-            renderer.DrawString("Enter - начать игру, Esc - назад", centerX - 20, centerY + 3, ConsoleColor.Gray);
+            renderer.DrawString("Enter - начать игру, Esc - назад", centerX - 15, centerY + 3, ConsoleColor.White);
             renderer.Render();
         }
 

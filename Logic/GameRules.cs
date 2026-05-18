@@ -20,6 +20,13 @@ namespace CSharpSnakeProject.Logic
             return snake.Length == 0;
         }
 
+        public void ApplyMineCollisionEffect(Snake snake, ref int score)
+        {
+            while (snake.Length > 2) //штраф за столкновение с миной
+                snake.CutTail();
+            score = 0;
+        }
+
         public bool ApplyFoodEffect(Snake snake, FoodManager foodManager, ref int score, Cell nextHead)
         {
             snake.Move(nextHead, true);

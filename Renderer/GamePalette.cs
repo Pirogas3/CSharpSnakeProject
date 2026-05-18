@@ -9,9 +9,10 @@ namespace CSharpSnakeProject.Renderer
         public ConsoleColor SnakeBody { get; }
         public ConsoleColor SnakeHead { get; }
         public ConsoleColor Score { get; }
+        public ConsoleColor Enemis { get; }
 
         public GamePalette(ConsoleColor background, ConsoleColor food, ConsoleColor walls,
-            ConsoleColor snakeBody, ConsoleColor snakeHead, ConsoleColor score)
+            ConsoleColor snakeBody, ConsoleColor snakeHead, ConsoleColor score, ConsoleColor enemis)
         {
             Background = background;
             Food = food;
@@ -19,6 +20,7 @@ namespace CSharpSnakeProject.Renderer
             SnakeBody = snakeBody;
             SnakeHead = snakeHead;
             Score = score;
+            Enemis = enemis;
         }
 
         public ConsoleColor[] ToColorArray()
@@ -30,7 +32,8 @@ namespace CSharpSnakeProject.Renderer
                 Walls,
                 SnakeBody,
                 SnakeHead,
-                Score
+                Score,
+                Enemis
             };
         }
     }

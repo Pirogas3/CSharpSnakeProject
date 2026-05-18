@@ -22,7 +22,7 @@ namespace CSharpSnakeProject.Logic.Utils
         // Проверка еды (по позиции)
         public static bool IsFood(Cell cell, Cell foodPosition) => cell == foodPosition;
 
-        // Проверка мины (если менеджер существует)
+        // Проверка мины (если менеджер мин существует)
         public static bool IsMine(Cell cell, MineManager mineManager) =>
             mineManager != null && mineManager.Mines.Any(m => m.Position == cell);
     }

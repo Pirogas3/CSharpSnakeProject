@@ -6,14 +6,13 @@ namespace CSharpSnakeProject.Entities
 {
     public class Snake : IDrawable
     {
+        private float _basicSpeedSnake = 4f;
+        private float _speedBoost = 2.5f;
+        private float _currentSpeedSnake = 4f;
         public List<Cell> Body { get; private set; }
         public SnakeDirection Direction { get; set; }
         private char _symbol = '■'; //Символ змейки меняется тут
         public char Symbol { get => _symbol; set => _symbol = value; }
-
-        private float _basicSpeedSnake = 4f;
-        private float _speedBoost = 2.5f;
-        private float _currentSpeedSnake = 4f;
         public float BasicSpeedSnake { get => _basicSpeedSnake; }
         public float SpeedBoost { get => _speedBoost; }
         public float CurrentSpeedSnake { get => _currentSpeedSnake; set => _currentSpeedSnake = value; }

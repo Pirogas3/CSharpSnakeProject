@@ -1,6 +1,5 @@
 ﻿
 using CSharpSnakeProject.Enums;
-using CSharpSnakeProject.Maps;
 using CSharpSnakeProject.Structs;
 
 namespace CSharpSnakeProject.Entities

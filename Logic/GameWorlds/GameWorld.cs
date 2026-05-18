@@ -96,7 +96,7 @@ namespace CSharpSnakeProject.Logic.GameWorlds
             if (_hasEnemies && _mineManager != null)
             {
                 bool mineHit = _mineManager.Update(deltaTime, _snake, _foodManager.Position);
-                if (mineHit) OnMineCollision();
+                if (mineHit) _gameRules.ApplyMineCollisionEffect(_snake, ref _score);
             }
 
             // Обновляем текущую скорость змейки (зажатие Shift)
@@ -126,7 +126,7 @@ namespace CSharpSnakeProject.Logic.GameWorlds
             {
                 var mine = _mineManager.Mines.First(m => m.Position == nextHead);
                 _mineManager.RemoveMine(mine);
-                OnMineCollision();
+                _gameRules.ApplyMineCollisionEffect(_snake, ref _score);
                 return;
             }
 
@@ -146,13 +146,6 @@ namespace CSharpSnakeProject.Logic.GameWorlds
             {
                 _gameRules.ApplyNormalMove(_snake, nextHead);
             }
-        }
-
-        private void OnMineCollision()
-        {
-            while (_snake.Length > 2)
-                _snake.CutTail();
-            _score = 0;
         }
 
         public void Draw(ConsoleRenderer renderer)

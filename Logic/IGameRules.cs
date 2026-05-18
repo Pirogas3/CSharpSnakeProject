@@ -13,6 +13,7 @@ namespace CSharpSnakeProject.Logic
 
         bool ApplyWallCollisionEffect();  // всегда game over
         bool ApplySelfCollisionEffect(Snake snake, ref int score);
+        void ApplyMineCollisionEffect(Snake snake, ref int score);
         bool ApplyFoodEffect(Snake snake, FoodManager foodManager, ref int score, Cell nextHead);
         void ApplyNormalMove(Snake snake, Cell nextHead);
     }
