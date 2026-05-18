@@ -68,4 +68,5 @@
 ## 📫 Контакты
 **Виктор**
 - **GitHib:** https://github.com/Pirogas3
-- **Telegram:** @victor_barber1444
+- **Telegram:** @victorlevachin
+- - **Mail:** victorlevachin@outlook.com
