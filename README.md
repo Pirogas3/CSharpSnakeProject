@@ -69,4 +69,4 @@
 **Виктор**
 - **GitHib:** https://github.com/Pirogas3
 - **Telegram:** @victorlevachin
-- - **Mail:** victorlevachin@outlook.com
+- **Mail:** victorlevachin@outlook.com
