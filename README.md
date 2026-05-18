@@ -28,9 +28,7 @@
 3. Запустите `CSharpSnakeProject.exe` – игра не требует установки .NET.
 
 ### Запуск из исходников (для разработчиков)
-1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/Pirogas3/CSharpSnakeProject.git
+1. Клонируйте репозиторий.
 2. Откройте `CSharpSnakeProject.sln` или `CSharpSnakeProject.slnx` в Visual Studio.
 3. Соберите и запустите.
 
