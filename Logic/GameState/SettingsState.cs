@@ -62,7 +62,7 @@ namespace CSharpSnakeProject.Logic.GameState
                     break;
                 case 2: // Враги
                     enemies = (enemies + delta) % 2;
-                    options[2] = enemies == 0 ? "Враги: Нет" : "Враги: Да (☢  - мины)";
+                    options[2] = enemies == 0 ? "Враги: Нет" : "Враги: Да (✵  - мины)";
                     break;
             }
         }

@@ -9,7 +9,7 @@ namespace CSharpSnakeProject.Entities
     {
         public Cell Position { get; set; }
         public float TimeLeft { get; set; }
-        public char Symbol => '☢';
+        public char Symbol => '✵';
         public ConsoleColor Color => ConsoleColor.Red;
 
         private float _moveTimer = 0f;
